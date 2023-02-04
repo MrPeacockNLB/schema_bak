@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://k8s.nordlb.local/cluster.schema.json",
+    "$id": "https://raw.githubusercontent.com/MrPeacockNLB/schema/main/schema.json",
     "title": "Coder.yaml",
     "description": "Description of a coder.yaml",
     "type": "object",
