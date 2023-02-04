@@ -1,0 +1,248 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://k8s.nordlb.local/cluster.schema.json",
+    "title": "Coder.yaml",
+    "description": "Description of a coder.yaml",
+    "type": "object",
+    "properties": {
+        "workspace": {
+            "type": "object",
+            "description": "Settings for workspace",
+            "properties": {
+                "env": {
+                    "description": "Array of Environment vars",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "Must contain name as Environment var name and value as value for this var",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the Environment var"
+                            },
+                            "value": {
+                                "type": "string",
+                                "description": "actual value of the Environment var"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "name",
+                            "value"
+                        ]
+                    }
+                },
+                "requests": {
+                    "description": "Kubernetes requests on CPU and Memory",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "integer",
+                            "description": ""
+                        },
+                        "memory": {
+                            "type": "integer",
+                            "description": ""
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "limits": {
+                    "description": "Kubernetes limits on CPU and Memory",
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "integer",
+                            "description": ""
+                        },
+                        "memory": {
+                            "type": "integer",
+                            "description": ""
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "image": {
+                        "type": "string",
+                        "description": ""
+                },
+                "init_script_timeout": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "git": {
+                    "description": "Kubernetes requests on CPU and Memory",
+                    "type": "object",
+                    "properties": {
+                        "enable_precommit": {
+                            "type": "boolean",
+                            "description": ""
+                        },
+                        "merge_strategy": {
+                            "type": "string",
+                            "description": ""
+                        },
+                        "additional_repos": {
+                            "description": "Array of additional repository be be cloned into the workspace",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "description": "Must contain name as Environment var name and value as value for this var",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of usage for this repository. Optional"
+                                    },
+                                    "git_orga": {
+                                        "type": "string",
+                                        "description": ""
+                                    },
+                                    "git_repo": {
+                                        "type": "string",
+                                        "description": ""
+                                    },
+                                    "git_ref": {
+                                        "type": "string",
+                                        "description": ""
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "git_orga",
+                                    "git_repo",
+                                    "git_ref"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "additionalProperties": false
+            },
+            "additionalProperties": false 
+        },
+        "vscode": {
+            "type": "object",
+            "description": "Settings for code-server a.k.a. VSCode online",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": "true enables the installation of VSCoder server"
+                },
+                "extensions": {
+                    "description": "VSCode extensions",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "description": "Array of unique extension id's",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Name (unique id) of VSCode extension to be loaded at VSCode startup. E.g.: hashicorp.terraform"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "id"
+                        ]
+                    }
+                },
+                "install_vsix": {
+                    "type": "boolean",
+                    "description": "true enables the installation of all in /workspace found extensions"
+                }
+            },
+            "additionalProperties": false
+        },
+        "jobs": {
+            "description": "array of jobs",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of job to be executed within init phase of the workspace"
+                    },
+                    "cmd": {
+                        "type": "string",
+                        "description": "Actual job to be executed within init phase of the workspace"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of job to be executed within init phase of the workspace"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "cmd"
+                ]
+            }
+        },
+        "apps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "display_name": {
+                        "type": "string",
+                        "description": "Displayname (human readable) of the application"
+                    },
+                    "slug": {
+                        "type": "string",
+                        "description": "TODO"
+                    },
+                    "icon": {
+                        "type": "string",
+                        "description": "TODO"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "subdomain": {
+                        "type": "boolean",
+                        "description": "If true expose application as SubDomain. Otherwise it will be reachable via path"
+                    },
+                    "share": {
+                        "type": "string",
+                        "description": "TODO"
+                    },
+                    "healthcheck": {
+                        "type": "object",
+                        "properties": {
+                            "url": {
+                               "type": "string",
+                               "description": "TODO"
+                            },
+                            "interval": {
+                                "type": "integer",
+                                "description": "TODO"
+                            },
+                            "threshold": {
+                                "type": "integer",
+                                "description": "TODO"
+                            }
+                        },
+                        "required": [
+                            "url",
+                            "interval",
+                            "threshold"
+                        ]
+                    }
+                },
+                "required": [
+                    "display_name",
+                    "slug",
+                    "icon",
+                    "url",
+                    "subdomain",
+                    "share"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false
+}
