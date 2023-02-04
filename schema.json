@@ -38,11 +38,11 @@
                     "properties": {
                         "cpu": {
                             "type": "integer",
-                            "description": ""
+                            "description": "How much cpu does this workspace need to be deployed"
                         },
                         "memory": {
                             "type": "integer",
-                            "description": ""
+                            "description": "How much memory does this workspace need to be deployed"
                         }
                     },
                     "additionalProperties": false
@@ -53,11 +53,11 @@
                     "properties": {
                         "cpu": {
                             "type": "integer",
-                            "description": ""
+                            "description": "This defines the maximum memory to be allocated by this workspace"
                         },
                         "memory": {
                             "type": "integer",
-                            "description": ""
+                            "description": "This defines the maximum memory to be allocated by this workspace"
                         }
                     },
                     "additionalProperties": false
@@ -76,11 +76,11 @@
                     "properties": {
                         "enable_precommit": {
                             "type": "boolean",
-                            "description": ""
+                            "description": "If this is true then pre-commit get automatically enabled on cloned repositories"
                         },
                         "merge_strategy": {
                             "type": "string",
-                            "description": ""
+                            "description": "rebase or merge"
                         },
                         "additional_repos": {
                             "description": "Array of additional repository be be cloned into the workspace",
@@ -95,15 +95,15 @@
                                     },
                                     "git_orga": {
                                         "type": "string",
-                                        "description": ""
+                                        "description": "This is the GitHub organisation of the repo to be cloned"
                                     },
                                     "git_repo": {
                                         "type": "string",
-                                        "description": ""
+                                        "description": "This is the repository name of the repo to be cloned"
                                     },
                                     "git_ref": {
                                         "type": "string",
-                                        "description": ""
+                                        "description": "This is the branch to be checked out. Defaults to main"
                                     }
                                 },
                                 "additionalProperties": false,
