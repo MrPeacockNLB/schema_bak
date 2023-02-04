@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/MrPeacockNLB/schema/main/schema.json
+# see https://github.com/nordlb-cloud/devops-k8s-modules/tree/main/schemas#ide-integration for installation
+---
+
+#
+# Basic configuration
+#
+workspace:
+  requests:
+    cpu: 1
+    memory: 1
+  limits:
+    cpu: 2
+    memory: 2
+  image: dockerimage:latest
+  init_script_timeout: 3600  # in seconds
+  git:
+    enable_precommit: true  # true or false
+    merge_strategy:   merge # merge or rebase
+    additional_repos:
+      - description: "library XY"
+        git_orga: "nordlb-coder"
+        git_repo: "library"
+        git_ref: "main" 
+  env:
+    - name: TEST      
+      value: "333"
+    - name: test2
+      value: ddd
+
+
+#
+# VSCode settings
+#
+vscode:
+  enable: true
+  install_vsix: true # install any vsix file found in /workspace 
+  extensions:
+    - id: hashicorp.terraform # Terraform
+
+
+#
+# Jobs
+#
+jobs:
+  - name: installTerraform
+    cmd: yay -S --noconfirm terraform
+    description: Für die Tests in dem Workspace wird terraform benötigt
+
+#
+# Applications
+#
+apps:
+  - display_name: code-server
+    slug: code-server
+    icon: "/icon/code.svg"
+    url: "http://localhost:13337?folder=/workspace/workdir"
+    subdomain: false
+    share: "owner"
+
+    healthcheck:
+      url: "http://localhost:13337/healthz"
+      interval: 3
+      threshold: 10
