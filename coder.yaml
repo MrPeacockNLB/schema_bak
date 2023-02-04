@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/MrPeacockNLB/schema/main/schema.json
+---
+
+#
+# VSCode (code-server)
+#
+vscode:
+  extensions:
+    - id: redhat.vscode-yaml # Schema Validation in VSCode
