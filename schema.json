@@ -4,247 +4,253 @@
     "title": "Coder.yaml",
     "description": "Description of a coder.yaml",
     "type": "object",
-    "anyOf": [{
     "properties": {
-        "workspace": {
+        "coder": {
             "type": "object",
-            "description": "Settings for workspace",
             "properties": {
-                "env": {
-                    "description": "Array of Environment vars",
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "description": "Must contain name as Environment var name and value as value for this var",
-                        "properties": {
-                            "name": {
-                                "type": "string",
-                                "description": "Name of the Environment var"
-                            },
-                            "value": {
-                                "type": "string",
-                                "description": "actual value of the Environment var"
-                            }
-                        },
-                        "additionalProperties": false,
-                        "required": [
-                            "name",
-                            "value"
-                        ]
-                    }
-                },
-                "requests": {
-                    "description": "Kubernetes requests on CPU and Memory",
+                "workspace": {
                     "type": "object",
+                    "description": "Settings for workspace",
                     "properties": {
-                        "cpu": {
-                            "type": "integer",
-                            "description": "How much cpu does this workspace need to be deployed"
-                        },
-                        "memory": {
-                            "type": "integer",
-                            "description": "How much memory does this workspace need to be deployed"
-                        }
-                    },
-                    "additionalProperties": false
-                },
-                "limits": {
-                    "description": "Kubernetes limits on CPU and Memory",
-                    "type": "object",
-                    "properties": {
-                        "cpu": {
-                            "type": "integer",
-                            "description": "This defines the maximum memory to be allocated by this workspace"
-                        },
-                        "memory": {
-                            "type": "integer",
-                            "description": "This defines the maximum memory to be allocated by this workspace"
-                        }
-                    },
-                    "additionalProperties": false
-                },
-                "image": {
-                        "type": "string",
-                        "description": ""
-                },
-                "init_script_timeout": {
-                    "type": "integer",
-                    "description": ""
-                },
-                "git": {
-                    "description": "Kubernetes requests on CPU and Memory",
-                    "type": "object",
-                    "properties": {
-                        "enable_precommit": {
-                            "type": "boolean",
-                            "description": "If this is true then pre-commit get automatically enabled on cloned repositories"
-                        },
-                        "merge_strategy": {
-                            "type": "string",
-                            "description": "rebase or merge"
-                        },
-                        "additional_repos": {
-                            "description": "Array of additional repository be be cloned into the workspace",
+                        "env": {
+                            "description": "Array of Environment vars",
                             "type": "array",
                             "items": {
                                 "type": "object",
                                 "description": "Must contain name as Environment var name and value as value for this var",
                                 "properties": {
-                                    "description": {
+                                    "name": {
                                         "type": "string",
-                                        "description": "Description of usage for this repository. Optional"
+                                        "description": "Name of the Environment var"
                                     },
-                                    "git_orga": {
+                                    "value": {
                                         "type": "string",
-                                        "description": "This is the GitHub organisation of the repo to be cloned"
-                                    },
-                                    "git_repo": {
-                                        "type": "string",
-                                        "description": "This is the repository name of the repo to be cloned"
-                                    },
-                                    "git_ref": {
-                                        "type": "string",
-                                        "description": "This is the branch to be checked out. Defaults to main"
+                                        "description": "actual value of the Environment var"
                                     }
                                 },
                                 "additionalProperties": false,
                                 "required": [
-                                    "git_orga",
-                                    "git_repo",
-                                    "git_ref"
+                                    "name",
+                                    "value"
                                 ]
                             }
+                        },
+                        "requests": {
+                            "description": "Kubernetes requests on CPU and Memory",
+                            "type": "object",
+                            "properties": {
+                                "cpu": {
+                                    "type": "integer",
+                                    "description": "How much cpu does this workspace need to be deployed"
+                                },
+                                "memory": {
+                                    "type": "integer",
+                                    "description": "How much memory does this workspace need to be deployed"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "limits": {
+                            "description": "Kubernetes limits on CPU and Memory",
+                            "type": "object",
+                            "properties": {
+                                "cpu": {
+                                    "type": "integer",
+                                    "description": "This defines the maximum memory to be allocated by this workspace"
+                                },
+                                "memory": {
+                                    "type": "integer",
+                                    "description": "This defines the maximum memory to be allocated by this workspace"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "image": {
+                                "type": "string",
+                                "description": ""
+                        },
+                        "init_script_timeout": {
+                            "type": "integer",
+                            "description": ""
+                        },
+                        "git": {
+                            "description": "Kubernetes requests on CPU and Memory",
+                            "type": "object",
+                            "properties": {
+                                "enable_precommit": {
+                                    "type": "boolean",
+                                    "description": "If this is true then pre-commit get automatically enabled on cloned repositories"
+                                },
+                                "merge_strategy": {
+                                    "type": "string",
+                                    "description": "rebase or merge"
+                                },
+                                "additional_repos": {
+                                    "description": "Array of additional repository be be cloned into the workspace",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "description": "Must contain name as Environment var name and value as value for this var",
+                                        "properties": {
+                                            "description": {
+                                                "type": "string",
+                                                "description": "Description of usage for this repository. Optional"
+                                            },
+                                            "git_orga": {
+                                                "type": "string",
+                                                "description": "This is the GitHub organisation of the repo to be cloned"
+                                            },
+                                            "git_repo": {
+                                                "type": "string",
+                                                "description": "This is the repository name of the repo to be cloned"
+                                            },
+                                            "git_ref": {
+                                                "type": "string",
+                                                "description": "This is the branch to be checked out. Defaults to main"
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "git_orga",
+                                            "git_repo",
+                                            "git_ref"
+                                        ]
+                                    }
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "additionalProperties": false
+                    },
+                    "additionalProperties": false 
+                },
+                "vscode": {
+                    "type": "object",
+                    "description": "Settings for code-server a.k.a. VSCode online",
+                    "properties": {
+                        "enable": {
+                            "type": "boolean",
+                            "description": "true enables the installation of VSCoder server"
+                        },
+                        "extensions": {
+                            "description": "VSCode extensions",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "description": "Array of unique extension id's",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Name (unique id) of VSCode extension to be loaded at VSCode startup. E.g.: hashicorp.terraform"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "id"
+                                ]
+                            }
+                        },
+                        "install_vsix": {
+                            "type": "boolean",
+                            "description": "true enables the installation of all in /workspace found extensions"
                         }
                     },
                     "additionalProperties": false
                 },
-                "additionalProperties": false
-            },
-            "additionalProperties": false 
-        },
-        "vscode": {
-            "type": "object",
-            "description": "Settings for code-server a.k.a. VSCode online",
-            "properties": {
-                "enable": {
-                    "type": "boolean",
-                    "description": "true enables the installation of VSCoder server"
-                },
-                "extensions": {
-                    "description": "VSCode extensions",
+                "jobs": {
+                    "description": "array of jobs",
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "description": "Array of unique extension id's",
+                        "description": "",
                         "properties": {
-                            "id": {
+                            "name": {
                                 "type": "string",
-                                "description": "Name (unique id) of VSCode extension to be loaded at VSCode startup. E.g.: hashicorp.terraform"
+                                "description": "Name of job to be executed within init phase of the workspace"
+                            },
+                            "cmd": {
+                                "type": "string",
+                                "description": "Actual job to be executed within init phase of the workspace"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of job to be executed within init phase of the workspace"
                             }
                         },
                         "additionalProperties": false,
                         "required": [
-                            "id"
+                        "name",
+                        "cmd"
                         ]
                     }
                 },
-                "install_vsix": {
-                    "type": "boolean",
-                    "description": "true enables the installation of all in /workspace found extensions"
-                }
-            },
-            "additionalProperties": false
-        },
-        "jobs": {
-            "description": "array of jobs",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "description": "",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "Name of job to be executed within init phase of the workspace"
-                    },
-                    "cmd": {
-                        "type": "string",
-                        "description": "Actual job to be executed within init phase of the workspace"
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "Description of job to be executed within init phase of the workspace"
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "name",
-                  "cmd"
-                ]
-            }
-        },
-        "apps": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "display_name": {
-                        "type": "string",
-                        "description": "Displayname (human readable) of the application"
-                    },
-                    "slug": {
-                        "type": "string",
-                        "description": "TODO"
-                    },
-                    "icon": {
-                        "type": "string",
-                        "description": "TODO"
-                    },
-                    "url": {
-                        "type": "string",
-                        "description": ""
-                    },
-                    "subdomain": {
-                        "type": "boolean",
-                        "description": "If true expose application as SubDomain. Otherwise it will be reachable via path"
-                    },
-                    "share": {
-                        "type": "string",
-                        "description": "TODO"
-                    },
-                    "healthcheck": {
+                "apps": {
+                    "type": "array",
+                    "items": {
                         "type": "object",
                         "properties": {
+                            "display_name": {
+                                "type": "string",
+                                "description": "Displayname (human readable) of the application"
+                            },
+                            "slug": {
+                                "type": "string",
+                                "description": "TODO"
+                            },
+                            "icon": {
+                                "type": "string",
+                                "description": "TODO"
+                            },
                             "url": {
-                               "type": "string",
-                               "description": "TODO"
+                                "type": "string",
+                                "description": ""
                             },
-                            "interval": {
-                                "type": "integer",
+                            "subdomain": {
+                                "type": "boolean",
+                                "description": "If true expose application as SubDomain. Otherwise it will be reachable via path"
+                            },
+                            "share": {
+                                "type": "string",
                                 "description": "TODO"
                             },
-                            "threshold": {
-                                "type": "integer",
-                                "description": "TODO"
+                            "healthcheck": {
+                                "type": "object",
+                                "properties": {
+                                    "url": {
+                                    "type": "string",
+                                    "description": "TODO"
+                                    },
+                                    "interval": {
+                                        "type": "integer",
+                                        "description": "TODO"
+                                    },
+                                    "threshold": {
+                                        "type": "integer",
+                                        "description": "TODO"
+                                    }
+                                },
+                                "required": [
+                                    "url",
+                                    "interval",
+                                    "threshold"
+                                ]
                             }
                         },
                         "required": [
+                            "display_name",
+                            "slug",
+                            "icon",
                             "url",
-                            "interval",
-                            "threshold"
+                            "subdomain",
+                            "share"
                         ]
                     }
-                },
-                "required": [
-                    "display_name",
-                    "slug",
-                    "icon",
-                    "url",
-                    "subdomain",
-                    "share"
-                ]
+                }
             }
-        }
+        } 
     },
-    "additionalProperties": false
-}]
+    "additionalProperties": false,
+    "required": [
+        "coder"
+    ]  
 }
