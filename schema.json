@@ -4,6 +4,7 @@
     "title": "Coder.yaml",
     "description": "Description of a coder.yaml",
     "type": "object",
+    "anyOf": [{
     "properties": {
         "workspace": {
             "type": "object",
@@ -245,4 +246,5 @@
         }
     },
     "additionalProperties": false
+}]
 }
