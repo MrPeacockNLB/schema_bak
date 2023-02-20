@@ -197,13 +197,21 @@
                                 "type": "string",
                                 "description": "TODO"
                             },
-                            "icon": {
+                            "icon_url": {
                                 "type": "string",
                                 "description": "TODO"
                             },
                             "url": {
                                 "type": "string",
                                 "description": ""
+                            },
+                            "icon_path": {
+                                "type": "string",
+                                "description": "only if type is file"
+                            },
+                            "type": {
+                                "type": "string",
+                                "enum": ["url", "file"]
                             },
                             "subdomain": {
                                 "type": "boolean",
@@ -217,8 +225,8 @@
                                 "type": "object",
                                 "properties": {
                                     "url": {
-                                    "type": "string",
-                                    "description": "reachable URL"
+                                        "type": "string",
+                                        "description": "reachable URL"
                                     },
                                     "interval": {
                                         "type": "integer",
@@ -239,7 +247,7 @@
                         "required": [
                             "display_name",
                             "slug",
-                            "icon",
+                            "type",
                             "url",
                             "subdomain",
                             "share",
