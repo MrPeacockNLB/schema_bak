@@ -211,22 +211,22 @@
                             },
                             "share": {
                                 "type": "string",
-                                "description": "TODO"
+                                "description": "Determines the \"level\" which the application is shared at. Valid levels are \"owner\" (default), \"authenticated\" and \"public\". Level \"owner\" disables sharing on the app, so only the workspace owner can access it. Level \"authenticated\" shares the app with all authenticated users. Level \"public\" shares it with any user, including unauthenticated users."
                             },
                             "healthcheck": {
                                 "type": "object",
                                 "properties": {
                                     "url": {
                                     "type": "string",
-                                    "description": "TODO"
+                                    "description": "reachable URL"
                                     },
                                     "interval": {
                                         "type": "integer",
-                                        "description": "TODO"
+                                        "description": "3"
                                     },
                                     "threshold": {
                                         "type": "integer",
-                                        "description": "TODO"
+                                        "description": "10"
                                     }
                                 },
                                 "required": [
@@ -242,7 +242,8 @@
                             "icon",
                             "url",
                             "subdomain",
-                            "share"
+                            "share",
+                            "healthcheck"
                         ]
                     }
                 }
