@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/MrPeacockNLB/schema/main/schema.json",
     "title": "Coder.yaml",
-    "description": "Description of a coder.yaml",
+    "description": "Description of coder.yaml for template nlb01",
     "type": "object",
     "properties": {
         "coder": {
@@ -134,10 +134,10 @@
                     "properties": {
                         "enable": {
                             "type": "boolean",
-                            "description": "true enables the installation of VSCoder server"
+                            "description": "True enables the installation of VSCoder server. Defaults to true"
                         },
                         "extensions": {
-                            "description": "VSCode extensions",
+                            "description": "VSCode extensions to be installed in workspace in code-server",
                             "type": "array",
                             "items": {
                                 "type": "object",
@@ -156,13 +156,13 @@
                         },
                         "install_vsix": {
                             "type": "boolean",
-                            "description": "true enables the installation of all in /workspace found extensions"
+                            "description": "True enables the installation of all in /workspace found extensions. Defaults to false"
                         }
                     },
                     "additionalProperties": false
                 },
                 "jobs": {
-                    "description": "array of jobs",
+                    "description": "array of jobs to be executed at init phase of workspace",
                     "type": "array",
                     "items": {
                         "type": "object",
@@ -204,11 +204,11 @@
                             },
                             "url": {
                                 "type": "string",
-                                "description": ""
+                                "description": "(String) A URL to be proxied to from inside the workspace. Either \"command\" or \"url\" may be specified, but not both."
                             },
                             "icon": {
                                 "type": "string",
-                                "description": "TODO"
+                                "description": "Icon URL. Can not be a private GH repository URL"
                             },
                             "subdomain": {
                                 "type": "boolean",
