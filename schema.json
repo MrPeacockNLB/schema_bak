@@ -67,11 +67,11 @@
                         },
                         "image": {
                                 "type": "string",
-                                "description": ""
+                                "description": "This is the container image used in kubernetes pod for your workspace"
                         },
                         "init_script_timeout": {
                             "type": "integer",
-                            "description": ""
+                            "description": "Timeout for the init-script. This depends on the steps inside jobs in coder.yaml"
                         },
                         "git": {
                             "description": "Kubernetes requests on CPU and Memory",
