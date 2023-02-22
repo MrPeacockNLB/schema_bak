@@ -203,23 +203,8 @@
                                 "description": ""
                             },
                             "icon": {
-                                "type": "object",
-                                "description": "Icon settings",
-                                "properties": {
-                                    "type": {
-                                        "type": "string",
-                                        "description": "defines if icon is read from file or URL resource",
-                                        "enum": ["url", "file"]
-                                    },
-                                    "address": {
-                                        "type": "string",
-                                        "description": "URL or path to icon"
-                                    }
-                                },
-                                "required": [
-                                    "type",
-                                    "address"
-                                ]
+                                "type": "string",
+                                "description": "TODO"
                             },
                             "subdomain": {
                                 "type": "boolean",
