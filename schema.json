@@ -130,7 +130,7 @@
                 },
                 "vscode": {
                     "type": "object",
-                    "description": "Settings for code-server a.k.a. VSCode online",
+                    "description": "Settings for code-server a.k.a. VSCode online. All settings are applied after jobs has been executed. If you want to download a .vsix extension then you can do it as a job.",
                     "properties": {
                         "enable": {
                             "type": "boolean",
@@ -156,7 +156,7 @@
                         },
                         "install_vsix": {
                             "type": "boolean",
-                            "description": "True enables the installation of all in /workspace found extensions. Defaults to false"
+                            "description": "True enables the installation of all in /workspace found extensions. Hint: You can download any .vsix Template via curl or wget and save it to /workspace. Then the extension gets processed and installed. Defaults to false"
                         }
                     },
                     "additionalProperties": false
