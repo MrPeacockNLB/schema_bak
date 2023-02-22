@@ -83,7 +83,11 @@
                                 },
                                 "merge_strategy": {
                                     "type": "string",
-                                    "description": "rebase or merge"
+                                    "description": "rebase or merge",
+                                    "enum": [
+                                        "rebase",
+                                        "merge"
+                                    ]
                                 },
                                 "additional_repos": {
                                     "description": "Array of additional repository be be cloned into the workspace",
