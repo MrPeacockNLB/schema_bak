@@ -28,7 +28,9 @@ coder:
         value: "333"
       - name: test2
         value: ddd
-
+    shell:
+      editor:      tilde # tilde should be default. nano, vim, vi. should be supported too
+      enable_tmux: true  # Multiplex Shell sessions by default. Defaults to false.
 
   #
   # VSCode settings

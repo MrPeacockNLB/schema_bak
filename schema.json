@@ -12,6 +12,20 @@
                     "type": "object",
                     "description": "Settings for workspace",
                     "properties": {
+                        "shell": {
+                            "description": "Shell settings for the terminal",
+                            "type": "object",
+                            "properties": {
+                                "editor": {
+                                    "type": "string",
+                                    "description": "Default Editor in Shell. Sets EDITOR and VISUAL ENV Vars"
+                                },
+                                "enable_tmux": {
+                                    "type": "boolean",
+                                    "description": "if set tu true tmux gets started. Defaults to false"
+                                }
+                            }
+                        },
                         "env": {
                             "description": "Array of Environment vars",
                             "type": "array",
