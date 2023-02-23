@@ -214,7 +214,8 @@
                             },
                             "slug": {
                                 "type": "string",
-                                "description": "(String) A hostname-friendly name for the app. This is used in URLs to access the app. May contain alphanumerics and hyphens. Cannot start/end with a hyphen or contain two consecutive hyphens."
+                                "pattern": "^[a-z0-9](-?[a-z0-9])*$",
+                                "description": "(String) A hostname-friendly name for the app. This is used in URLs to access the app. May contain lowercase alphanumerics and hyphens. Cannot start/end with a hyphen or contain two consecutive hyphens."
                             },
                             "url": {
                                 "type": "string",
