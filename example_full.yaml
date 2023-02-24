@@ -9,10 +9,10 @@ coder:
   workspace:
     requests:
       cpu: 1
-      memory: 1
+      memory: 1Gi
     limits:
       cpu: 2
-      memory: 2
+      memory: 2Gi
     dind:
       enable: true # defaults to false
       limits:

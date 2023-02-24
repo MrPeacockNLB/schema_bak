@@ -59,7 +59,8 @@
                                 },
                                 "memory": {
                                     "type": "integer",
-                                    "description": "How much memory does this workspace need to be deployed"
+                                    "description": "How much memory does this workspace need to be deployed",
+                                    "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
                                 }
                             },
                             "additionalProperties": false
@@ -74,7 +75,8 @@
                                 },
                                 "memory": {
                                     "type": "integer",
-                                    "description": "This defines the maximum memory to be allocated by this workspace"
+                                    "description": "This defines the maximum memory to be allocated by this workspace",
+                                    "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
                                 }
                             },
                             "additionalProperties": false
@@ -97,7 +99,8 @@
                                         },
                                         "memory": {
                                             "type": "string",
-                                            "description": "This defines the maximum memory to be allocated for DinD container"
+                                            "description": "This defines the maximum memory to be allocated for DinD container",
+                                            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
                                         }
                                     },
                                     "additionalProperties": false
