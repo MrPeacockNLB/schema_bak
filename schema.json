@@ -96,7 +96,7 @@
                                             "description": "This defines the maximum cpu to be allocated for DinD container"
                                         },
                                         "memory": {
-                                            "type": "integer",
+                                            "type": "string",
                                             "description": "This defines the maximum memory to be allocated for DinD container"
                                         }
                                     },

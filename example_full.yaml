@@ -17,7 +17,7 @@ coder:
       enable: true # defaults to false
       limits:
         cpu: 2
-        memory: 2
+        memory: 2Gi
     image: dockerimage:latest
     init_script_timeout: 3600  # in seconds
     git:
