@@ -17,12 +17,12 @@
                             "type": "object",
                             "properties": {
                                 "editor": {
-                                    "type": "string",
-                                    "description": "Default Editor in Shell. Sets EDITOR and VISUAL ENV Vars"
+                                    "enum": ["owner", "authenticated", "public"],
+                                    "description": "Default editor in Shell. Sets EDITOR and VISUAL env vars"
                                 },
                                 "enable_tmux": {
                                     "type": "boolean",
-                                    "description": "if set tu true tmux gets started. Defaults to false"
+                                    "description": "if set to true tmux gets started. Defaults to false"
                                 }
                             }
                         },

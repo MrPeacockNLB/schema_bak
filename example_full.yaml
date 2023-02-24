@@ -63,7 +63,7 @@ coder:
       icon: "/icon/code.svg"
       url: "http://localhost:13337?folder=/workspace/workdir"
       subdomain: false
-      share: 
+      share: "owner"
 
       healthcheck:
         url: "http://localhost:13337/healthz"
