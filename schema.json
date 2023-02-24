@@ -17,7 +17,7 @@
                             "type": "object",
                             "properties": {
                                 "editor": {
-                                    "enum": ["owner", "authenticated", "public"],
+                                    "enum": ["tilde", "nano", "vim", "vi"],
                                     "description": "Default editor in Shell. Sets EDITOR and VISUAL env vars"
                                 },
                                 "enable_tmux": {
