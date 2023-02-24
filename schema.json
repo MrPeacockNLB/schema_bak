@@ -70,7 +70,7 @@
                             "properties": {
                                 "cpu": {
                                     "type": "integer",
-                                    "description": "This defines the maximum memory to be allocated by this workspace"
+                                    "description": "This defines the maximum cpu to be allocated by this workspace"
                                 },
                                 "memory": {
                                     "type": "integer",
@@ -78,6 +78,32 @@
                                 }
                             },
                             "additionalProperties": false
+                        },
+                        "dind": {
+                            "description": "Kubernetes limits on CPU and Memory for DinD container. This is only affects if docker is enable",
+                            "type": "object",
+                            "properties": {
+                                "enable": {
+                                    "description": "if true then docker deamon is avaiable in workspace. Defaults to false",
+                                    "type": "boolean"
+                                },
+                                "limits": {
+                                    "description": "Kubernetes limits on CPU and Memory for DinD container",
+                                    "type": "object",
+                                    "properties": {
+                                        "cpu": {
+                                            "type": "integer",
+                                            "description": "This defines the maximum cpu to be allocated for DinD container"
+                                        },
+                                        "memory": {
+                                            "type": "integer",
+                                            "description": "This defines the maximum memory to be allocated for DinD container"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "additionalProperties": false
+                            }
                         },
                         "image": {
                                 "type": "string",
@@ -215,7 +241,7 @@
                             "slug": {
                                 "type": "string",
                                 "pattern": "^[a-z0-9](-?[a-z0-9])*$",
-                                "description": "(String) A hostname-friendly name for the app. This is used in URLs to access the app. May contain lowercase alphanumerics and hyphens. Cannot start/end with a hyphen or contain two consecutive hyphens."
+                                "description": "(String) A hostname-friendly name for the app. This is used in URLs to access the app. May contain lowercase alphanumerics and hyphens. Cannot start/end with a hyphen or contain two consecutive hyphens. Pattern ^[a-z0-9](-?[a-z0-9])*$"
                             },
                             "url": {
                                 "type": "string",

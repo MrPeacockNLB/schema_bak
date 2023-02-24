@@ -13,6 +13,11 @@ coder:
     limits:
       cpu: 2
       memory: 2
+    dind:
+      enable: true # defaults to false
+      limits:
+        cpu: 2
+        memory: 2
     image: dockerimage:latest
     init_script_timeout: 3600  # in seconds
     git:
@@ -40,7 +45,6 @@ coder:
     install_vsix: true # install any vsix file found in /workspace 
     extensions:
       - id: hashicorp.terraform # Terraform
-
 
   #
   # Jobs
