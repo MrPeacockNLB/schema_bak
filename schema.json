@@ -204,6 +204,20 @@
                     },
                     "additionalProperties": false
                 },
+                "intellij": {
+                    "type": "object",
+                    "description": "Settings for IntelliJ",
+                    "properties": {
+                        "enable": {
+                            "type": "boolean",
+                            "description": "True enables the installation of IntelliJ button. Defaults to true"
+                        },
+                        "idePath": {
+                            "description": "This is the installation path of IntelliJ inside your workspace",
+                            "type": "string"
+                    },
+                    "additionalProperties": false
+                },
                 "jobs": {
                     "description": "array of jobs to be executed at init phase of workspace",
                     "type": "array",

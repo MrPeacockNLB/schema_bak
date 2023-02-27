@@ -46,6 +46,10 @@ coder:
     extensions:
       - id: hashicorp.terraform # Terraform
 
+
+  #
+  # IntelliJ
+  #
   intellij:
     enable: false
     idePath: /opt/idea # e.G.
