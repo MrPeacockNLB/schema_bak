@@ -290,10 +290,7 @@
                             "display_name",
                             "slug",
                             "icon",
-                            "url",
-                            "subdomain",
-                            "share",
-                            "healthcheck"
+                            "url"
                         ]
                     }
                 }
