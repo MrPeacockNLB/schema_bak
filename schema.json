@@ -215,6 +215,7 @@
                         "idePath": {
                             "description": "This is the installation path of IntelliJ inside your workspace",
                             "type": "string"
+                        }
                     },
                     "additionalProperties": false
                 },
