@@ -46,6 +46,10 @@ coder:
     extensions:
       - id: hashicorp.terraform # Terraform
 
+  intellij:
+    enable: false
+    idePath: /opt/idea # e.G.
+
   #
   # Jobs
   #
