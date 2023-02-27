@@ -294,7 +294,8 @@
                         ]
                     }
                 }
-            }
+            },
+            "additionalProperties": false
         } 
     },
     "additionalProperties": false,
