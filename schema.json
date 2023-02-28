@@ -112,9 +112,9 @@
                                 "type": "string",
                                 "description": "This is the container image used in kubernetes pod for your workspace"
                         },
-                        "init_script_timeout": {
+                        "startup_script_timeout": {
                             "type": "integer",
-                            "description": "Timeout in seconds for the init-script. This depends on the steps to be executed inside jobs in coder.yaml. It defaults to 3600 seconds"
+                            "description": "Timeout in seconds for the agent startup-script. This depends on the steps to be executed inside jobs in coder.yaml. It defaults to 3600 seconds"
                         },
                         "git": {
                             "description": "Kubernetes requests on CPU and Memory",

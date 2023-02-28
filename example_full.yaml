@@ -19,7 +19,7 @@ coder:
         cpu: "2"
         memory: 2Gi
     image: dockerimage:latest
-    init_script_timeout: 3600  # in seconds
+    startup_script_timeout: 3600  # in seconds
     git:
       enable_precommit: true  # true or false
       merge_strategy:   merge # merge or rebase
