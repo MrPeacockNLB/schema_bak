@@ -114,7 +114,7 @@
                         },
                         "init_script_timeout": {
                             "type": "integer",
-                            "description": "Timeout for the init-script. This depends on the steps inside jobs in coder.yaml"
+                            "description": "Timeout in seconds for the init-script. This depends on the steps to be executed inside jobs in coder.yaml. It defaults to 3600 seconds"
                         },
                         "git": {
                             "description": "Kubernetes requests on CPU and Memory",
