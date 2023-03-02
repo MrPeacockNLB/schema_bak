@@ -36,6 +36,13 @@ coder:
     shell:
       editor:      tilde # tilde should be default. nano, vim, vi. should be supported too
       enable_tmux: true  # Multiplex Shell sessions by default. Defaults to false.
+    jetbrains:
+      intellij:
+        enable: false
+        idePath: /opt/idea # e.G.
+      plugins:
+        - name: SpotBugs
+          id: 142953
 
   #
   # VSCode settings
@@ -46,17 +53,6 @@ coder:
     extensions:
       - id: hashicorp.terraform # Terraform
 
-
-  #
-  # JetBrains
-  #
-  jetbrains:
-    intellij:
-      enable: false
-      idePath: /opt/idea # e.G.
-    plugins:
-      - name: SpotBugs
-        id: 142953
 
   #
   # Jobs

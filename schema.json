@@ -12,6 +12,54 @@
                     "type": "object",
                     "description": "Settings for workspace",
                     "properties": {
+                        "jetbrains": {
+                            "type": "object",
+                            "description": "Settings for workspace",
+                            "properties": {
+                                "intellij": {
+                                    "type": "object",
+                                    "description": "Settings for IntelliJ",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean",
+                                            "description": "True enables the installation of IntelliJ button. Defaults to true"
+                                        },
+                                        "idePath": {
+                                            "description": "This is the installation path of IntelliJ inside your workspace",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "plugins": {
+                                    "type": "array",
+                                    "description": "Plugins for JetBrains IDEs",
+                                    "items": {
+                                        "type": "object",
+                                        "description": "",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "description": "The name of the plugin"
+                                            },
+                                            "id": {
+                                                "description": "The ID of the plugin",
+                                                "type": "integer"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "e.g. reason why it's needed"
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "name",
+                                            "id"
+                                        ]
+                                    }
+                                }
+                            }
+                        },        
                         "shell": {
                             "description": "Shell settings for the terminal",
                             "type": "object",
@@ -203,54 +251,6 @@
                         }
                     },
                     "additionalProperties": false
-                },
-                "jetbrains": {
-                    "type": "object",
-                    "description": "Settings for workspace",
-                    "properties": {
-                        "intellij": {
-                            "type": "object",
-                            "description": "Settings for IntelliJ",
-                            "properties": {
-                                "enable": {
-                                    "type": "boolean",
-                                    "description": "True enables the installation of IntelliJ button. Defaults to true"
-                                },
-                                "idePath": {
-                                    "description": "This is the installation path of IntelliJ inside your workspace",
-                                    "type": "string"
-                                }
-                            },
-                            "additionalProperties": false
-                        },
-                        "plugins": {
-                            "type": "array",
-                            "description": "Plugins for JetBrains IDEs",
-                            "items": {
-                                "type": "object",
-                                "description": "",
-                                "properties": {
-                                    "name": {
-                                        "type": "string",
-                                        "description": "The name of the plugin"
-                                    },
-                                    "id": {
-                                        "description": "The ID of the plugin",
-                                        "type": "integer"
-                                    },
-                                    "description": {
-                                        "type": "string",
-                                        "description": "e.g. reason why it's needed"
-                                    }
-                                },
-                                "additionalProperties": false,
-                                "required": [
-                                    "name",
-                                    "id"
-                                ]
-                            }
-                        }
-                    }
                 },
                 "jobs": {
                     "description": "array of jobs to be executed at init phase of workspace",
