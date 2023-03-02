@@ -64,9 +64,13 @@
                             "description": "Shell settings for the terminal",
                             "type": "object",
                             "properties": {
+                                "login": {
+                                    "enum": ["bash", "zsh", "fish"],
+                                    "description": "Default login shell. Sets SHELL env var. Defaults to bash"
+                                },
                                 "editor": {
                                     "enum": ["tilde", "nano", "vim", "vi"],
-                                    "description": "Default editor in Shell. Sets EDITOR and VISUAL env vars"
+                                    "description": "Default editor in shell. Sets EDITOR and VISUAL env vars"
                                 },
                                 "enable_tmux": {
                                     "type": "boolean",
@@ -274,8 +278,8 @@
                         },
                         "additionalProperties": false,
                         "required": [
-                        "name",
-                        "cmd"
+                            "name",
+                            "cmd"
                         ]
                     }
                 },

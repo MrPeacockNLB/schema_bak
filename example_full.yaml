@@ -34,7 +34,8 @@ coder:
       - name: test2
         value: ddd
     shell:
-      editor:      tilde # tilde should be default. nano, vim, vi. should be supported too
+      login:       bash  # One of [bash|zsh|fish]. Defaults to bash.
+      editor:      tilde # One of [vi|vim|nano]. Defaults to nano. Tilde should be supported too.
       enable_tmux: true  # Multiplex Shell sessions by default. Defaults to false.
     jetbrains:
       intellij:
