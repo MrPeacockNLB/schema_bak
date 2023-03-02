@@ -27,7 +27,7 @@ coder:
         - description: "library XY"
           git_orga: "nordlb-coder"
           git_repo: "library"
-          git_ref: "main" 
+          git_ref: "main"
     env:
       - name: TEST      
         value: "333"
@@ -48,11 +48,15 @@ coder:
 
 
   #
-  # IntelliJ
+  # JetBrains
   #
-  intellij:
-    enable: false
-    idePath: /opt/idea # e.G.
+  jetbrains:
+    intellij:
+      enable: false
+      idePath: /opt/idea # e.G.
+    plugins:
+      - name: SpotBugs
+        id: 142953
 
   #
   # Jobs
