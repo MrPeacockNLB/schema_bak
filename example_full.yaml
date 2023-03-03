@@ -24,10 +24,11 @@ coder:
       enable_precommit: true  # true or false
       merge_strategy:   merge # merge or rebase
       additional_repos:
-        - description: "library XY"
-          git_orga: "nordlb-coder"
-          git_repo: "library"
-          git_ref: "main"
+        - description: library XY
+          git_orga: nordlb-coder
+          git_repo: library
+          git_ref: main
+          path: "/workspace"
     env:
       - name: TEST      
         value: "333"
@@ -72,7 +73,7 @@ coder:
       icon: "/icon/code.svg"
       url: "http://localhost:13337?folder=/workspace/workdir"
       subdomain: false
-      share: "owner"
+      share: owner
 
       healthcheck:
         url: "http://localhost:13337/healthz"

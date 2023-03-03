@@ -206,6 +206,10 @@
                                             "git_ref": {
                                                 "type": "string",
                                                 "description": "This is the branch to be checked out. Defaults to main"
+                                            },
+                                            "path": {
+                                                "type": "string",
+                                                "description": "Target directory. Defaults to /workspace"
                                             }
                                         },
                                         "additionalProperties": false,
