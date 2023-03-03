@@ -209,7 +209,7 @@
                                             },
                                             "path": {
                                                 "type": "string",
-                                                "description": "Target directory. Defaults to /workspace"
+                                                "description": "Target directory. Defaults to /workspace/${git_repo}"
                                             }
                                         },
                                         "additionalProperties": false,
