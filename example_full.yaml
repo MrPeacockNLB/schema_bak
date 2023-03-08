@@ -21,7 +21,7 @@ coder:
     image: dockerimage:latest
     startup_script_timeout: 3600  # in seconds
     git:
-      enable_precommit: true  # true or false
+      enable_pre-commit: true  # true or false
       merge_strategy:   merge # merge or rebase
       additional_repos:
         - description: library XY
