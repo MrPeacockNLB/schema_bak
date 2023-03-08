@@ -45,6 +45,9 @@ coder:
       plugins:
         - name: SpotBugs
           id: 142953
+    nix:
+      enable: true # default false
+      size: 0      # 0 bedeutet kein Volume wird gemountet
 
   #
   # VSCode settings
