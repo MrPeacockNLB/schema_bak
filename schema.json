@@ -223,6 +223,21 @@
                             },
                             "additionalProperties": false
                         },
+                        "nix": {
+                            "description": "This configures Niy package manager",
+                            "type": "object",
+                            "properties": {
+                                "enable": {
+                                    "description": "if true then Nix deamon is avaiable in workspace. Defaults to false",
+                                    "type": "boolean"
+                                },
+                                "size": {
+                                    "description": "If size > 0 then a storage is mounted on /nix",
+                                    "type": "integer"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
                         "additionalProperties": false
                     },
                     "additionalProperties": false 
