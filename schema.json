@@ -271,6 +271,10 @@
                         "install_vsix": {
                             "type": "boolean",
                             "description": "True enables the installation of all in /workspace found extensions. Hint: You can download any .vsix Template via curl or wget and save it to /workspace. Then the extension gets processed and installed. Defaults to false"
+                        },
+                        "settings": {
+                            "type": "string",
+                            "description": "JSON settings for Code-Server"
                         }
                     },
                     "additionalProperties": false
