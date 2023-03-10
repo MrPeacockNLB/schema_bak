@@ -1,9 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/MrPeacockNLB/schema/main/schema.json
 ---
 coder:
-  jobs:
-    - name: downloadJSONCrack
-      cmd: curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/AykutSarac/vsextensions/jsoncrack-vscode/1.0.8/vspackage -JLs -o - | gunzip > /workspace/jsoncrack.vsix
   #
   # VSCode (code-server)
   #
