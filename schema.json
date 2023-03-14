@@ -21,7 +21,7 @@
                                     "description": "Default login shell. Sets SHELL env var. Defaults to bash"
                                 },
                                 "editor": {
-                                    "enum": ["tilde", "nano", "vim", "vi"],
+                                    "type": "string",
                                     "description": "Default editor in shell. Sets EDITOR and VISUAL env vars"
                                 },
                                 "enable_tmux": {
