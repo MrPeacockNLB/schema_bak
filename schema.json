@@ -12,6 +12,11 @@
                      "type": "object",
                     "description": "Settings for workspace",
                     "properties": {
+                        "size": {
+                            "description": "this is the size of the /workspace partition and must be set. It can not be empty",
+                            "type": "string",
+                            "pattern": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+                        },
                         "shell": {
                             "description": "Shell settings for the terminal",
                             "type": "object",
@@ -192,7 +197,10 @@
                         },
                         "additionalProperties": false
                     },
-                    "additionalProperties": false 
+                    "additionalProperties": false,
+                    "required": [
+                        "size"
+                    ] 
                 },
                 "jetbrains": {
                     "type": "object",
