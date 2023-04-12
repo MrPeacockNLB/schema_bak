@@ -197,10 +197,7 @@
                         },
                         "additionalProperties": false
                     },
-                    "additionalProperties": false,
-                    "required": [
-                        "size"
-                    ] 
+                    "additionalProperties": false
                 },
                 "jetbrains": {
                     "type": "object",
