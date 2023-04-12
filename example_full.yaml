@@ -37,7 +37,7 @@ coder:
         value: ddd
     shell:
       login:       bash  # One of [bash|zsh|fish]. Defaults to bash.
-      editor:      nano  # One of [vi|vim|nano]. Defaults to nano. any other which is installed viy jobs should be supported too.
+      editor:      nano  # Defaults to nano. Any other which is installed via jobs should be supported too.
       enable_tmux: true  # Multiplex Shell sessions by default. Defaults to false.
     nix:
       enable: true # default false
