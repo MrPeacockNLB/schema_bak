@@ -197,7 +197,8 @@
                         },
                         "dir": {
                             "description": "set directory to be opened in IDE. This defaults to /workspace/workdir. But can be useful when cloned extra repositories.",
-                            "type": "string"
+                            "type": "string",
+                            "pattern": "^(/[a-zA-Z0-9_-]+)+$"
                         },
                         "additionalProperties": false
                     },
