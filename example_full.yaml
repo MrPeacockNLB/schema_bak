@@ -42,7 +42,7 @@ coder:
     nix:
       enable: true # default false
       size: 0      # 0 bedeutet kein Volume wird gemountet
-
+    dir: /workspace/coder # open other dir than standard /workspace/workdir
 
   #
   # JetBrains settings

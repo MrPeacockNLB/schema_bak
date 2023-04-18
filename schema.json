@@ -195,6 +195,10 @@
                             },
                             "additionalProperties": false
                         },
+                        "dir": {
+                            "description": "set directory to be opened in IDE. This defaults to /workspace/workdir. But can be useful when cloned extra repositories.",
+                            "type": "string"
+                        },
                         "additionalProperties": false
                     },
                     "additionalProperties": false
