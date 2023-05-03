@@ -129,9 +129,20 @@
                             "description": "Kubernetes requests on CPU and Memory",
                             "type": "object",
                             "properties": {
-                                "enable_pre-commit": {
-                                    "type": "boolean",
-                                    "description": "If this is true then pre-commit get automatically enabled on cloned repositories"
+                                "pre_commit": {
+                                    "description": "Pre-Commit specific settings",
+                                    "type": "object",
+                                    "properties": {    
+                                        "enable": {
+                                            "type": "boolean",
+                                            "description": "If this is true then pre-commit get automatically enabled on cloned repositories. This defaults to true"
+                                        },
+                                        "hooks": {
+                                            "type": "string",
+                                            "description": "A comma separated list of additional hooks be to be installed"
+                                        }
+                                    },
+                                    "additionalProperties": false
                                 },
                                 "merge_strategy": {
                                     "type": "string",
