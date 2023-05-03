@@ -22,7 +22,9 @@ coder:
     image: dockerimage:latest
     startup_script_timeout: 3600  # in seconds
     git:
-      enable_pre-commit: true  # true or false
+      pre_commit:
+        enable: true  # true or false
+        hooks: "commit-msg"   # Array Komma getrennt
       merge_strategy:   merge # merge or rebase
       additional_repos:
         - description: library XY
