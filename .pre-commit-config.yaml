@@ -1,0 +1,32 @@
+#
+# To use conventional-pre-commit hook we've to install
+# commit-msg too. So override default hook pre-commit
+# installs the needed hook on pre-commit install.
+#
+default_install_hook_types: [pre-commit, commit-msg]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: no-commit-to-branch
+  #
+  # Enforce conventional commits https://www.conventionalcommits.org/de/v1.0.0/
+  # To make this work pre-commit install --hook-type commit-msg mus be executed.
+  #
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.2.0 # latest release https://github.com/compilerla/conventional-pre-commit/releases
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+
+        #
+        # define supported types
+        #
+        # optional: list of Conventional Commits types to allow e.g. [feat, fix, ci, chore, test]
+        # https://github.com/compilerla/conventional-pre-commit/blob/0319903f0ab451c059b7159ae841e7c378be1c79/conventional_pre_commit/format.py#L4
+        args: []

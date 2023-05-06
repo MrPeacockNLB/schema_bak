@@ -3,6 +3,9 @@
 coder:
   workspace:
     size: 10Mi
+    git:
+      pre_commit:
+        enable: true
   #
   # VSCode (code-server)
   #
