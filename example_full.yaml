@@ -19,6 +19,10 @@ coder:
       limits:
         cpu: "2"
         memory: 2Gi
+      images:
+        pull:
+          - image1
+          - image2
     image: dockerimage:latest
     startup_script_timeout: 3600  # in seconds
     git:
@@ -33,7 +37,7 @@ coder:
           git_ref: main
           path: "/workspace"
     env:
-      - name: TEST      
+      - name: TEST
         value: "333"
       - name: test2
         value: ddd
@@ -63,7 +67,7 @@ coder:
   #
   vscode:
     enable: true
-    install_vsix: true # install any vsix file found in /workspace 
+    install_vsix: true # install any vsix file found in /workspace
     extensions:
       - id: hashicorp.terraform # Terraform
     settings: |

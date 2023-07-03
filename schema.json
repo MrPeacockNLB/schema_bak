@@ -114,8 +114,24 @@
                                     },
                                     "additionalProperties": false
                                 },
+                                "images": {
+                                    "description": "Docker image handling. Mainly pulling images from Artifactory.",
+                                    "type": "object",
+                                    "properties": {
+                                        "pull": {
+                                            "description": "This array contains all images that should be pulled from Artifactory for Workspace usage.",
+                                            "type": "array",
+                                            "items": {
+                                                "description": "Image to be pulled from Artifactory at Workspace startup.",
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
                                 "additionalProperties": false
-                            }
+                            },
+                            "additionalProperties": false
                         },
                         "image": {
                                 "type": "string",
@@ -132,7 +148,7 @@
                                 "pre_commit": {
                                     "description": "Pre-Commit specific settings",
                                     "type": "object",
-                                    "properties": {    
+                                    "properties": {
                                         "enable": {
                                             "type": "boolean",
                                             "description": "If this is true then pre-commit get automatically enabled on cloned repositories. This defaults to true"
@@ -262,7 +278,7 @@
                             }
                         }
                     }
-                },        
+                },
                 "vscode": {
                     "type": "object",
                     "description": "Settings for code-server a.k.a. VSCode online. All settings are applied after jobs has been executed. If you want to download a .vsix extension then you can do it as a job.",
@@ -392,10 +408,10 @@
                 }
             },
             "additionalProperties": false
-        } 
+        }
     },
     "additionalProperties": false,
     "required": [
         "coder"
-    ]  
+    ]
 }
