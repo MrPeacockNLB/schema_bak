@@ -1,3 +1,5 @@
+# Do not use
+
 # Schema für Coder
 
 Schema definition **coder.yaml**
